@@ -307,7 +307,7 @@ window.addEventListener('deviceorientation', function(event) {
 	// This can be a bit tricky
     if (window.orientation === 0) {
     	// The device is right-side up in portrait orientation
-    	motion.x = event.gamma + motion_initial.y;
+    	motion.x = event.gamma - motion_initial.y;
     	motion.y = event.beta + motion_initial.x;
     } else if (window.orientation === 90) {
     	// The device is in landscape laying on its left side
