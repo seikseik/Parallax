@@ -122,8 +122,8 @@ function drawCanvas() {
 	TWEEN.update();
 
 	// Calculate how much the canvas should be rotated
-	var rotate_x = (pointer.y * -0.15) + (motion.y * 1.2);
-	var rotate_y = (pointer.x * 0.15) + (motion.x * 1.2);
+	var rotate_x = (pointer.y * -0.08) + (motion.y * 0.8);
+	var rotate_y = (pointer.x * 0.08) + (motion.x * 0.8);
 
 	// Actually rotate the canvas
 	canvas.style.transform = "rotateX(" + rotate_x + "deg) rotateY(" + rotate_y + "deg)";
@@ -307,8 +307,8 @@ window.addEventListener('deviceorientation', function(event) {
 	// This can be a bit tricky
     if (window.orientation === 0) {
     	// The device is right-side up in portrait orientation
-    	motion.x = event.gamma - motion_initial.y;
-    	motion.y = event.beta - motion_initial.x;
+    	motion.x = event.gamma + motion_initial.y;
+    	motion.y = event.beta + motion_initial.x;
     } else if (window.orientation === 90) {
     	// The device is in landscape laying on its left side
     	motion.x = event.beta - motion_initial.x;
