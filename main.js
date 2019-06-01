@@ -161,7 +161,7 @@ function getOffset(layer) {
 
 	// Calculate the amount you want the layers to move based on the gyroscope
 	// You can play with the motion_multiplier variable here. Depending on the size of your canvas you may want to turn it up or down.
-	var motion_multiplier = 1.1;
+	var motion_multiplier = 0.8;
 	var motion_offset_x = motion.x * layer.z_index * motion_multiplier;
 	var motion_offset_y = motion.y * layer.z_index * motion_multiplier;
 
@@ -324,7 +324,7 @@ window.addEventListener('deviceorientation', function(event) {
     }
 
 	// This is optional, but prevents things from moving too far (because these are 2d images it can look broken)
-	var max_offset = 15;
+	var max_offset = 10;
 
     // Check if magnitude of motion offset along X axis is greater than your max setting
     if (Math.abs(motion.x) > max_offset) {
