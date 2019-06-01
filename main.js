@@ -308,7 +308,7 @@ window.addEventListener('deviceorientation', function(event) {
     if (window.orientation === 0) {
     	// The device is right-side up in portrait orientation
     	motion.x = event.gamma - motion_initial.y;
-    	motion.y = event.beta - motion_initial.x;
+    	motion.y = - event.beta + motion_initial.x;
     } else if (window.orientation === 90) {
     	// The device is in landscape laying on its left side
     	motion.x = event.beta - motion_initial.x;
@@ -324,7 +324,7 @@ window.addEventListener('deviceorientation', function(event) {
     }
 
 	// This is optional, but prevents things from moving too far (because these are 2d images it can look broken)
-	var max_offset = 10;
+	var max_offset = 18;
 
     // Check if magnitude of motion offset along X axis is greater than your max setting
     if (Math.abs(motion.x) > max_offset) {
